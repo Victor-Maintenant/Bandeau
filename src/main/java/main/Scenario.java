@@ -12,7 +12,7 @@ public class Scenario {
 		this.numero = numero;
 	}
 	
-	public void ajoutCouleur(Effet e) {
+	public void ajoutEffet(Effet e) {
 		this.effets.add(e);	
 	}
 	

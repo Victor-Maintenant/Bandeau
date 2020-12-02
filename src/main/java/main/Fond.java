@@ -3,11 +3,13 @@ package main;
 import java.awt.Color;
 import java.util.*;
 
+import bandeau.Bandeau;
+
 public class Fond extends Effet {
 	
 	private List<Color> couleurs = new LinkedList<>();
 	
-	public Fond(String nom) {
+	public Fond(String nom, Bandeau bandeau) {
 		super(nom, bandeau);
 	}
 	
@@ -18,11 +20,13 @@ public class Fond extends Effet {
 	@Override
 	public void realiser() throws Exception {
 		if(this.couleurs.isEmpty()) throw new Exception("Aucune couleur enregistrée !");
-		bandeau.setMessage("On va changer de couleur de fond");
+		bandeau.setMessage("On change de couleur !");;
+		Bandeau tampon = super.bandeau;
 		for(Color c : this.couleurs){
 			bandeau.setBackground(c);
-			bandeau.sleep(1000);
+			bandeau.sleep(500);
 		}
+		bandeau.setBackground(tampon.getBackground());
 	}
 
 }

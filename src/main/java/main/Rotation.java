@@ -1,8 +1,10 @@
 package main;
 
+import bandeau.Bandeau;
+
 public class Rotation extends Effet {
 
-	public Rotation(String nom) {
+	public Rotation(String nom, Bandeau bandeau) {
 		super(nom, bandeau);
 	}
 

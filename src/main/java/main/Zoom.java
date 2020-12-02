@@ -2,18 +2,29 @@ package main;
 
 import java.awt.Font;
 
-public class Zoom extends Effet {
+import bandeau.Bandeau;
 
-	public Zoom(String nom) {
+public class Zoom extends Effet {
+	
+	private int tailleMax;
+	private int vitesse;
+	
+	public Zoom(String nom, Bandeau bandeau, int taille, int vitesse) {
 		super(nom, bandeau);
+		this.tailleMax = taille;
+		this.vitesse = vitesse;
 	}
 
 	@Override
 	public void realiser() {
-		for (int i = 5; i < 60 ; i+=5) {
+		bandeau.setMessage("Zoooooom !");
+		Bandeau tampon = super.bandeau;
+		
+		for (int i = 5; i < this.tailleMax ; i+=this.vitesse) {
 			bandeau.setFont(new Font("Dialog", Font.BOLD, 5+i));
 			bandeau.sleep(100);
 		}
+		bandeau.setFont(tampon.getFont());
 	}
 
 }
