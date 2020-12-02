@@ -14,7 +14,7 @@ public abstract class Effet {
     Color fore;
 	
 	public Effet(String nom, Bandeau bandeau) {
-		this.nom = nom;
+		this.setNom(nom);
 		this.bandeau = bandeau;
 		this.font = bandeau.getFont();
 		this.back = bandeau.getBackground();
@@ -46,4 +46,12 @@ public abstract class Effet {
 	}
 
 	public abstract void realiser() throws Exception;
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 }

@@ -17,7 +17,7 @@ public class ZoomI extends Effet {
 
 	@Override
 	public void realiser() {
-		bandeau.setMessage("Dézoooooom !");
+		bandeau.setMessage(this.getNom());
 		Bandeau tampon = super.bandeau;
 		
 		for (int i = this.tailleMax;i > this.font.getSize();i-=this.vitesse) {

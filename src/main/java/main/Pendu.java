@@ -13,8 +13,11 @@ public class Pendu extends Effet {
 	public void realiser() throws Exception {
 		Random rand = new Random();
 		List<Integer> nombresAleatoires = new LinkedList<>();
-		String mes = "Le jeu du pendu";
-		String message = "_______________";
+		String mes = this.getNom();
+		String message = "";
+		for(int i = 0;i < mes.length(); i++) {
+			message += "_";
+		}
 		int n = mes.length();
 		
 		while(n >= 0) {

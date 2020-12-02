@@ -20,7 +20,7 @@ public class Fond extends Effet {
 	@Override
 	public void realiser() throws Exception {
 		if(this.couleurs.isEmpty()) throw new Exception("Aucune couleur enregistrée !");
-		bandeau.setMessage("On change de couleur !");
+		bandeau.setMessage(this.getNom());
 		for(Color c : this.couleurs){
 			bandeau.setBackground(c);
 			bandeau.sleep(500);

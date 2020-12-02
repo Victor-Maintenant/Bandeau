@@ -15,7 +15,7 @@ public class Rotation extends Effet {
 
 	@Override
 	public void realiser() {
-		bandeau.setMessage("On tourne...");
+		bandeau.setMessage(this.getNom());
 		for (int i = 0; i <= 100; i+= this.vitesse) {
 			if(!sens) bandeau.setRotation(2*Math.PI*i / 100);
 			else bandeau.setRotation(-2*Math.PI*i / 100);

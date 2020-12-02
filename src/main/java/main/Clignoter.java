@@ -6,14 +6,14 @@ public class Clignoter extends Effet {
 
 	private int nbClignotement;
 	
-	public Clignoter(String nom, Bandeau bandeau, int nb) {
-		super(nom, bandeau);
+	public Clignoter(String texte, Bandeau bandeau, int nb) {
+		super(texte, bandeau);
 		this.nbClignotement = nb;
 	}
 
 	@Override
 	public void realiser() throws Exception {
-		this.bandeau.setMessage("On clignote");
+		this.bandeau.setMessage(this.getNom());
 		for (int i = 0;i < this.nbClignotement;i++) {
 			this.bandeau.setForeground(this.fore);
 			this.bandeau.sleep(80);

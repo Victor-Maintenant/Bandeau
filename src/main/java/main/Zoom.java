@@ -17,7 +17,7 @@ public class Zoom extends Effet {
 
 	@Override
 	public void realiser() {
-		bandeau.setMessage("Zoooooom !");
+		bandeau.setMessage(this.getNom());
 		Bandeau tampon = super.bandeau;
 		
 		for (int i = 5; i < this.tailleMax ; i+=this.vitesse) {

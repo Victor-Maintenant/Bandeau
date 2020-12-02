@@ -5,12 +5,8 @@ import java.util.*;
 
 public class Scenario {
 	
-	private int numero;
 	private List<Effet> effets = new LinkedList<>();
 
-	public Scenario(int numero) {
-		this.numero = numero;
-	}
 	
 	public void ajoutEffet(Effet e) {
 		this.effets.add(e);	
