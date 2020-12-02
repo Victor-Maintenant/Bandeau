@@ -17,6 +17,7 @@ public class Main {
 
         
         Zoom zoom = new Zoom("Zoom", monBandeau, 100, 7);
+        ZoomI zoominv = new ZoomI("Zoom inversé", monBandeau, 100, 7);
         Rotation rota = new Rotation("Horraire", monBandeau, 10, true);
         Fond fond = new Fond("Fond", monBandeau);
         Clignoter cli = new Clignoter("Clignotement", monBandeau, 10);
@@ -30,7 +31,8 @@ public class Main {
         s1.ajoutEffet(rota);
         s1.ajoutEffet(zoom);
         s1.ajoutEffet(cli);
-        s2.ajoutEffet(pendu);
+        s1.ajoutEffet(pendu);
+        s2.ajoutEffet(zoominv);
         
         
         scenarios.add(s1);
