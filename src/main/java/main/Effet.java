@@ -12,5 +12,5 @@ public abstract class Effet {
 		this.bandeau = bandeau;
 	}
 	
-	public abstract void realiser();
+	public abstract void realiser() throws Exception;
 }

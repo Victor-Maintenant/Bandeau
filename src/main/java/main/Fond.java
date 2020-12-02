@@ -16,7 +16,8 @@ public class Fond extends Effet {
 	}
 
 	@Override
-	public void realiser() {
+	public void realiser() throws Exception {
+		if(this.couleurs.isEmpty()) throw new Exception("Aucune couleur enregistrée !");
 		bandeau.setMessage("On va changer de couleur de fond");
 		for(Color c : this.couleurs){
 			bandeau.setBackground(c);
