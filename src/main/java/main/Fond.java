@@ -20,13 +20,12 @@ public class Fond extends Effet {
 	@Override
 	public void realiser() throws Exception {
 		if(this.couleurs.isEmpty()) throw new Exception("Aucune couleur enregistrée !");
-		bandeau.setMessage("On change de couleur !");;
-		Bandeau tampon = super.bandeau;
+		bandeau.setMessage("On change de couleur !");
 		for(Color c : this.couleurs){
 			bandeau.setBackground(c);
 			bandeau.sleep(500);
 		}
-		bandeau.setBackground(tampon.getBackground());
+		bandeau.setBackground(this.back);
 	}
 
 }

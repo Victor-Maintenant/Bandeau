@@ -24,7 +24,7 @@ public class Zoom extends Effet {
 			bandeau.setFont(new Font("Dialog", Font.BOLD, 5+i));
 			bandeau.sleep(100);
 		}
-		bandeau.setFont(tampon.getFont());
+		bandeau.setFont(this.font);
 	}
 
 }
