@@ -12,18 +12,18 @@ public class Main {
 		Bandeau monBandeau = new Bandeau();
 		
         List<Scenario> scenarios = new LinkedList<>();
-        Scenario s1 = new Scenario();
-        Scenario s2 = new Scenario();
+        Scenario s1 = new Scenario(2);
+        Scenario s2 = new Scenario(1);
 
         
-        Zoom zoom = new Zoom("Zoom", monBandeau, 100, 7);
-        ZoomI zoominv = new ZoomI("Zoom inversé", monBandeau, 100, 7);
-        Rotation rotaH = new Rotation("Horraire", monBandeau, 10, true);
-        Rotation rotaAH = new Rotation("AntiHorraire", monBandeau, 10, false);
-        Fond fond = new Fond("Fond", monBandeau);
-        Clignoter cli = new Clignoter("Clignotement", monBandeau, 10);
-        Pendu pendu = new Pendu("Pendu", monBandeau);
-        Epilepsie epi = new Epilepsie("Epilepsie", monBandeau, 2);
+        Zoom zoom = new Zoom("Zoom", monBandeau, 2, 100, 7);
+        ZoomI zoominv = new ZoomI("Zoom inversé", monBandeau, 2, 100, 7);
+        Rotation rotaH = new Rotation("Horraire", monBandeau, 1, 10, false);
+        Rotation rotaAH = new Rotation("AntiHorraire",  monBandeau, 1, 10, true);
+        Fond fond = new Fond("Fond", monBandeau, 1);
+        Clignoter cli = new Clignoter("Clignotement", monBandeau, 2, 10);
+        Pendu pendu = new Pendu("Le jeu du pendu", monBandeau, 2);
+        Epilepsie epi = new Epilepsie("Epilepsie", monBandeau, 1, 1);
         
         fond.ajoutCouleur(Color.BLUE);
         fond.ajoutCouleur(Color.PINK);
@@ -32,12 +32,13 @@ public class Main {
         epi.ajoutCouleur(Color.PINK);
         epi.ajoutCouleur(Color.ORANGE);
 
-        s1.ajoutEffet(fond);
+        s2.ajoutEffet(fond);
         s1.ajoutEffet(rotaH);
-        s1.ajoutEffet(rotaAH);
+        s2.ajoutEffet(rotaAH);
         s1.ajoutEffet(zoom);
-        s1.ajoutEffet(cli);
+
         s2.ajoutEffet(pendu);
+        s2.ajoutEffet(cli);
         s1.ajoutEffet(zoominv);
         s1.ajoutEffet(epi);
         
@@ -47,7 +48,7 @@ public class Main {
         
         s2.demarrer();
         
-       /* for(Scenario s : scenarios) {
+       /*for(Scenario s : scenarios) {
         	s.demarrer();
         }*/
         

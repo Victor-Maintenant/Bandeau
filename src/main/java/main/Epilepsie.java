@@ -10,8 +10,8 @@ public class Epilepsie extends Effet {
 	private List<Color> couleurs = new LinkedList<>();
 
 	
-	public Epilepsie(String texte, Bandeau bandeau, int nb) {
-		super(texte, bandeau);
+	public Epilepsie(String texte, Bandeau bandeau,int rep, int nb) {
+		super(texte, bandeau, rep);
 		this.nbClignotement = nb;
 	}
 
@@ -22,18 +22,23 @@ public class Epilepsie extends Effet {
 	@Override
 	public void realiser() throws Exception {
 		if(this.couleurs.isEmpty()) throw new Exception("Aucune couleur enregistrée !");
-		this.bandeau.setMessage(this.getNom());
+		this.bandeau.setMessage(this.getTexte());
 		int i = 0;
-		while ( i <= this.nbClignotement) {
-			for (Color c : this.couleurs) {
-				this.bandeau.setBackground(c);
-				for(int j = 0;j < 2;j++) {
-					this.bandeau.setForeground(this.fore);
-					this.bandeau.sleep(50);
-					this.bandeau.setForeground(this.back);
-					this.bandeau.sleep(50);
+		int n = 0;
+		while (n < this.getRep()) {
+			while ( i <= this.nbClignotement) {
+				for (Color c : this.couleurs) {
+					this.bandeau.setBackground(c);
+					for(int j = 0;j < 2;j++) {
+						this.bandeau.setForeground(this.fore);
+						this.bandeau.sleep(50);
+						this.bandeau.setForeground(this.back);
+						this.bandeau.sleep(50);
+					}
 				}
+				i++;
 			}
+			n+=1;
 		}
 		this.bandeau.setBackground(this.back);
 		this.bandeau.setForeground(this.fore);

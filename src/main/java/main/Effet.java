@@ -7,20 +7,30 @@ import bandeau.Bandeau;
 
 public abstract class Effet {
 
-	private String nom;
+	private int rep;
+	private String texte;
 	protected static Bandeau bandeau;
 	Font font;
     Color back;
     Color fore;
 	
-	public Effet(String nom, Bandeau bandeau) {
-		this.setNom(nom);
+	public Effet(String texte, Bandeau bandeau, int rep) {
+		this.texte = texte;
 		this.bandeau = bandeau;
+		this.rep = rep;
 		this.font = bandeau.getFont();
 		this.back = bandeau.getBackground();
 		this.fore = bandeau.getForeground();
 	}
 	
+	public int getRep() {
+		return rep;
+	}
+
+	public void setRep(int rep) {
+		this.rep = rep;
+	}
+
 	public Font getFont() {
 		return font;
 	}
@@ -47,11 +57,11 @@ public abstract class Effet {
 
 	public abstract void realiser() throws Exception;
 
-	public String getNom() {
-		return nom;
+	public String getTexte() {
+		return texte;
 	}
 
 	public void setNom(String nom) {
-		this.nom = nom;
+		this.texte = nom;
 	}
 }
