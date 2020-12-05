@@ -5,8 +5,11 @@ import bandeau.Bandeau;
 
 public class Pendu extends Effet {
 
-	public Pendu(String nom, Bandeau bandeau, int rep) {
+	private String caractère;
+	
+	public Pendu(String nom, Bandeau bandeau, int rep, String carac) {
 		super(nom, bandeau, rep);
+		this.caractère = carac;
 	}
 
 	@Override
@@ -17,7 +20,7 @@ public class Pendu extends Effet {
 			List<Integer> nombresAleatoires = new LinkedList<>();
 			String message = "";
 			for(int i = 0;i < mes.length(); i++) {
-				message += "_";
+				message += this.caractère;
 			}
 			
 			this.bandeau.setMessage(message);
