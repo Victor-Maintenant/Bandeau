@@ -18,7 +18,6 @@ public class ZoomI extends Effet {
 	@Override
 	public void realiser() {
 		bandeau.setMessage(this.getTexte());
-		Bandeau tampon = super.bandeau;
 		int n = 0;
 		while (n < this.getRep()) {
 			for (int i = this.tailleMax;i > this.font.getSize();i-=this.vitesse) {
