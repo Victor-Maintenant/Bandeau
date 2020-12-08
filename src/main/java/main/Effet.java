@@ -9,10 +9,10 @@ public abstract class Effet {
 
 	private int rep;
 	private String texte;
-	protected static Bandeau bandeau;
-	Font font;
-    Color back;
-    Color fore;
+	protected Bandeau bandeau;
+	private Font font;
+    private Color back;
+    private Color fore;
 	
 	public Effet(String texte, Bandeau bandeau, int rep) {
 		this.texte = texte;

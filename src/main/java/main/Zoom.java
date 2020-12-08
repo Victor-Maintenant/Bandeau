@@ -26,7 +26,7 @@ public class Zoom extends Effet {
 			}
 			n+=1;
 		}
-		bandeau.setFont(this.font);
+		bandeau.setFont(this.getFont());
 	}
 
 }

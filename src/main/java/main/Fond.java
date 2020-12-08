@@ -29,7 +29,7 @@ public class Fond extends Effet {
 			}
 			n+=1;
 		}
-		bandeau.setBackground(this.back);
+		bandeau.setBackground(this.getBack());
 	}
 
 }

@@ -30,9 +30,9 @@ public class Epilepsie extends Effet {
 				for (Color c : this.couleurs) {
 					this.bandeau.setBackground(c);
 					for(int j = 0;j < 2;j++) {
-						this.bandeau.setForeground(this.fore);
+						this.bandeau.setForeground(this.getFore());
 						this.bandeau.sleep(50);
-						this.bandeau.setForeground(this.back);
+						this.bandeau.setForeground(this.getBack());
 						this.bandeau.sleep(50);
 					}
 				}
@@ -40,8 +40,8 @@ public class Epilepsie extends Effet {
 			}
 			n+=1;
 		}
-		this.bandeau.setBackground(this.back);
-		this.bandeau.setForeground(this.fore);
+		this.bandeau.setBackground(this.getBack());
+		this.bandeau.setForeground(this.getFore());
 	}
 
 }

@@ -17,14 +17,14 @@ public class Clignoter extends Effet {
 		int n = 0;
 		while (n < this.getRep()) {
 			for (int i = 0;i < this.nbClignotement;i++) {
-				this.bandeau.setForeground(this.fore);
+				this.bandeau.setForeground(this.getFore());
 				this.bandeau.sleep(80);
-				this.bandeau.setForeground(this.back);
+				this.bandeau.setForeground(this.getBack());
 				this.bandeau.sleep(80);
 			}
 			n += 1;
 		}
-		this.bandeau.setForeground(this.fore);
+		this.bandeau.setForeground(this.getFore());
 	}
 
 }
